@@ -41,7 +41,7 @@ while len(open_set) > 0 and highest[1] < n:
     boards_tested += 1
     print_stats(highest[0], boards_tested)
 
-#the 'print_stats' function will always moves the cursor up, so
+#the 'print_stats' function will always move the cursor up, so
 #this print compenstates that by replacing the cursor after
 #the text
 print("\n" * (n + 1))
