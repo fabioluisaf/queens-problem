@@ -20,12 +20,12 @@ population.sort(key=fitness)
 # looping while no individual has reached the perfect score, or until the max number
 # of generations has been exceeded
 while fitness(population[0]) > 0 and amt_generations <= max_generations:
-    amt_generations += 1
-    # get the next generation
-    population = next_generation(population)
+  amt_generations += 1
+  # get the next generation
+  population = next_generation(population)
 
-    # print the stats of the current generation
-    print_stats(population[0], amt_generations)
+  # print the stats of the current generation
+  print_stats(population[0], amt_generations)
 
 
 print("\n")
