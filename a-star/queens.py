@@ -1,16 +1,15 @@
 from search import expand_board, queens_amt, fscore
 from ui import print_stats
 
-# 0 = has nothing on it
-# 1 = has a queen on it
-# 2 = is being atacked by at least one queen
-
 #each board is nxn
-n = 9
+n = 10
 boards_tested = 0
 
+# -1 at column i symbolizes that there is no queen at column i
+# j at column i symbolizes that there is a queen at row j in column i
+
 #creating an empty board to start everything
-empty_board = [[0 for j in range(n)] for i in range(n)]
+empty_board = [-1 for i in range(n)]
 
 #stores the open set of boards, those that will be evaluated
 open_set = [empty_board]
@@ -41,7 +40,4 @@ while len(open_set) > 0 and highest[1] < n:
     boards_tested += 1
     print_stats(highest[0], boards_tested)
 
-#the 'print_stats' function will always move the cursor up, so
-#this print compenstates that by replacing the cursor after
-#the text
-print("\n" * (n + 1))
+print("\n")
